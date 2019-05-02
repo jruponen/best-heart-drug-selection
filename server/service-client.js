@@ -86,13 +86,14 @@ ServiceClient.prototype = {
   },
 
   getScore: function (href, data, callback) {
+    data = [data];
     logger.enter('getScore()', 'href: ' + href + ', data: ' + data);
     let options = {
       method: 'POST',
       uri: href,
       headers: {'content-type': 'application/json'}
     };
-    let body = JSON.stringify({values: [[data]], fields: schema});
+    let body = JSON.stringify({values: [data], fields: schema});
     debug(body);
     options.body = body;
 
