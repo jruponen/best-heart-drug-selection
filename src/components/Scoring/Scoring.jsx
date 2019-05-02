@@ -120,7 +120,7 @@ class Scoring extends Component {
       return;
     }
     this.setState({
-      scoringData: {id: id, value: data},
+      scoringData: {id: id, value: [data]},
       scoringResult: null,
       feedbackResult: null
     }, () => {
